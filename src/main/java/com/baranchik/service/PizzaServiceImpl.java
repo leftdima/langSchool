@@ -1,6 +1,6 @@
 package com.baranchik.service;
 
-import com.baranchik.controller.PizzaTransform;
+import com.baranchik.composits.PizzaTransform;
 import com.baranchik.model.Pizza;
 import com.baranchik.model.Pizzeria;
 import com.baranchik.repository.PizzaRepository;
@@ -9,9 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class PizzaServiceImpl implements PizzaService {

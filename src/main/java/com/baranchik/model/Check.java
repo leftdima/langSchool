@@ -113,6 +113,6 @@ public class Check implements Serializable {
 
     @Override
     public String toString() {
-        return pizza1.toString() + getInfoOfAmount() + "\n";
+        return pizza1.toString() + getInfoOfAmount();
     }
 }

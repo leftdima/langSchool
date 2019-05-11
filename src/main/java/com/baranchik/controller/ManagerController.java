@@ -22,14 +22,14 @@ public class ManagerController {
 
     @RequestMapping(value = "/process/{id}", method = RequestMethod.GET)
     public String processed(@PathVariable("id") Integer id) {
-        //clientFacade.removeOrder(id);
-        return "redirect:/myorders";
+        managerFacade.sendMailAndProcessOrder(id);
+        return "redirect:/management";
     }
 
     @RequestMapping(value = "/delivery/{id}", method = RequestMethod.GET)
     public String delivery(@PathVariable("id") Integer id) {
-        //clientFacade.removeOrder(id);
-        return "redirect:/myorders";
+        managerFacade.deliveryOrder(id);
+        return "redirect:/management";
     }
 
 }

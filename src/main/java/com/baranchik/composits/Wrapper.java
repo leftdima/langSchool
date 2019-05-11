@@ -1,9 +1,7 @@
 package com.baranchik.composits;
 
-import com.baranchik.controller.PizzaTransform;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Component

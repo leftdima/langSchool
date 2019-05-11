@@ -1,4 +1,4 @@
-package com.baranchik.controller;
+package com.baranchik.composits;
 
 import com.baranchik.model.Pizza;
 import org.springframework.stereotype.Component;

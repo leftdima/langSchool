@@ -1,6 +1,6 @@
 package com.baranchik.service;
 
-import com.baranchik.controller.PizzaTransform;
+import com.baranchik.composits.PizzaTransform;
 import com.baranchik.composits.Wrapper;
 import com.baranchik.model.Check;
 import com.baranchik.model.CheckPK;

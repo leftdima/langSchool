@@ -1,6 +1,6 @@
 package com.baranchik.service;
 
-import com.baranchik.controller.PizzaTransform;
+import com.baranchik.composits.PizzaTransform;
 import com.baranchik.model.Pizza;
 import com.baranchik.model.Pizzeria;
 
