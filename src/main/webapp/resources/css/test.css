@@ -1,0 +1,17 @@
+
+body {
+    background-image: url("../images/backview.jpg");
+}
+
+.twidth {
+    width: 100%;
+}
+
+.filterInput{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 1px solid;
+    outline: none;
+    background: none;
+}

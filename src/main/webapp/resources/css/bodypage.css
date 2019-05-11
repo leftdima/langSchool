@@ -1,0 +1,37 @@
+@import url(https://fonts.googleapis.com/css?f1mily=Didact+Gothic|Comfortaa:400,700&subset=latin,cyrillic);
+
+body {
+    /*background: url('../images/backview.jpg') no-repeat;*/
+    background-color: #204d74;
+}
+
+.sizepizzas {
+    width: 100%;
+}
+
+.tableheadfont {
+    color: #269abc;
+    text-decoration: none;
+    display: block;
+    line-height: 80px;
+    padding: 0 20px;
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    transition: .3s linear;
+}
+
+.tablesrcfont {
+    color: #31b0d5;
+    text-decoration: none;
+    display: block;
+    line-height: 80px;
+    padding: 0 20px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    transition: .3s linear;
+
+}
