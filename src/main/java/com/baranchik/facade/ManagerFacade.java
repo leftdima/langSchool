@@ -2,6 +2,7 @@ package com.baranchik.facade;
 
 import com.baranchik.mail.MailUtil;
 import com.baranchik.model.OrderClient;
+import com.baranchik.model.Pizzeria;
 import com.baranchik.service.OrderService;
 import com.baranchik.service.PizzaService;
 import com.baranchik.service.UserService;
@@ -44,6 +45,19 @@ public class ManagerFacade {
         orderClient.setDeliveryDate(orderService.getNowTime());
         orderService.save(orderClient);
     }
+
+    public OrderClient getOrder(Integer id){
+        return orderService.getOrderClient(id);
+    }
+
+    public List<Pizzeria> getListPizzeria(){
+        return pizzaService.getPizzerias();
+    }
+
+    public Pizzeria getPizzeria(Integer id){
+        return pizzaService.getPizzeria(id);
+    }
+
 
 
 }

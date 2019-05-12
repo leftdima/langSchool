@@ -30,4 +30,21 @@ public class PizzaRepositoryImpl implements PizzaRepository {
                 .setParameter("id", 1)
                 .uniqueResult();
     }
+
+    @Override
+    public Pizzeria getPizzeria(Integer id) {
+        return (Pizzeria)sessionFactory
+                .getCurrentSession()
+                .createQuery("from Pizzeria where id = :id")
+                .setParameter("id", id)
+                .uniqueResult();
+    }
+
+    @Override
+    public List<Pizzeria> getPizzerias() {
+        return sessionFactory
+                .getCurrentSession()
+                .createQuery("from Pizzeria")
+                .list();
+    }
 }

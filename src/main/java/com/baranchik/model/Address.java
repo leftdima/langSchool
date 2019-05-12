@@ -54,6 +54,10 @@ public class Address implements Serializable {
     @OneToMany(mappedBy = "address")
     @LazyCollection(LazyCollectionOption.FALSE)
     private Set<User> userSet;
+    @Column(name = "latitude")
+    private Double latitude;
+    @Column(name = "longitude")
+    private Double longitude;
 
     public Address() {
     }
@@ -125,6 +129,22 @@ public class Address implements Serializable {
         this.userSet = userSet;
     }
 
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -145,6 +165,14 @@ public class Address implements Serializable {
         return true;
     }
 
+    public String getFullAddress(){
+        if (apartment == null){
+            return "Улица " + street + " д." + house + " " + locality;
+        } else {
+            return "Улица " + street + " д." + house + " кв." + apartment + " " + locality;
+        }
+    }
+
     @Override
     public String toString() {
         return "Address{" +
@@ -153,6 +181,10 @@ public class Address implements Serializable {
                 ", street='" + street + '\'' +
                 ", house=" + house +
                 ", apartment=" + apartment +
+                ", pizzeria=" + pizzeria +
+                ", userSet=" + userSet +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
                 '}';
     }
 }

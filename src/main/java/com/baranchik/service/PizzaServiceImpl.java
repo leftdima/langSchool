@@ -37,4 +37,16 @@ public class PizzaServiceImpl implements PizzaService {
     public Pizzeria getDefaultPizzeria() {
         return pizzaRepository.getDefaultPizzeria();
     }
+
+    @Override
+    @Transactional
+    public Pizzeria getPizzeria(Integer id) {
+        return pizzaRepository.getPizzeria(id);
+    }
+
+    @Override
+    @Transactional
+    public List<Pizzeria> getPizzerias(){
+        return pizzaRepository.getPizzerias();
+    }
 }

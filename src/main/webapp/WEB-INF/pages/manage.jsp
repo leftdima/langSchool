@@ -39,6 +39,7 @@
             <th>Состав</th>
             <th>Статус обработки</th>
             <th>Статус доставки</th>
+            <th>Отмена</th>
         </tr>
         </thead>
         <tbody class="bodytable">

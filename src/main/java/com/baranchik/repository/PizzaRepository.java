@@ -8,4 +8,6 @@ import java.util.List;
 public interface PizzaRepository {
     List<Pizza> getPizzaList();
     Pizzeria getDefaultPizzeria();
+    Pizzeria getPizzeria(Integer id);
+    List<Pizzeria> getPizzerias();
 }

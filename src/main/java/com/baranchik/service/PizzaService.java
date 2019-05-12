@@ -10,4 +10,6 @@ public interface PizzaService {
     List<Pizza> getPizzaList();
     List<PizzaTransform> getTransformsPizzas();
     Pizzeria getDefaultPizzeria();
+    Pizzeria getPizzeria(Integer id);
+    List<Pizzeria> getPizzerias();
 }
