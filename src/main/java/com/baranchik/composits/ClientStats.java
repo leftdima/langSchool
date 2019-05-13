@@ -9,8 +9,8 @@ public class ClientStats {
     private BigInteger countOfOrders;
 
     public ClientStats(BigDecimal avgCost, BigDecimal sumCost, BigInteger countOfOrders) {
-        this.avgCost = avgCost;
-        this.sumCost = sumCost;
+        this.avgCost = avgCost.stripTrailingZeros();
+        this.sumCost = sumCost.stripTrailingZeros();
         this.countOfOrders = countOfOrders;
     }
 

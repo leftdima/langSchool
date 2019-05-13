@@ -8,6 +8,7 @@
     <title>Регистрация</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/auth.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/menu.css"/>
 </head>
 <body>
     <c:url var="actionUrl" value="/register"/>

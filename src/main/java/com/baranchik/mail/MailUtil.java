@@ -16,6 +16,8 @@ public class MailUtil {
 
     public boolean sendMessage(OrderClient orderClient) {
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage(templateMessage);
+        System.out.println(simpleMailMessage);
+        System.out.println(orderClient);
         simpleMailMessage.setTo(orderClient.getUser().getEmail());
         simpleMailMessage.setText(createMessage(orderClient));
         try {

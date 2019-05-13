@@ -13,6 +13,8 @@
     <title>Обработка заказа</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/test.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/menu.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bodypage.css"/>
     <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
     <style>
 
@@ -27,19 +29,27 @@
     </style>
 </head>
 <body>
+<nav class="top-menu">
+    <ul class="menu-main">
+        <li class="left-item"><a href="<c:url value="/management"/>">Домой</a></li>
+        <li class="right-item"><a href="<c:url value="/edit"/>">Личный Кабинет</a></li>
+        <li class="right-item"><a href="<c:url value="/exit"/>">Выход</a></li>
+    </ul>
+    <a class="navbar-logo" href=""><img src="${pageContext.request.contextPath}/resources/images/pizzalogo.png"></a>
+</nav>
 <div id="map-canvas"></div>
-<h2 class="text-center">Адрес Клиента</h2>
-<h3 class="text-center">${orderClient.user.address.fullAddress}</h3>
-<h1 class="text-center">Выберите пиццерию</h1>
-<table class="table-bordered twidth">
-    <thead>
+<h2 class="tableheadfont text-center">Адрес Клиента</h2>
+<h3 class="tablesrcfont text-center">${orderClient.user.address.fullAddress}</h3>
+<h1 class="tablesrcfont text-center">Выберите пиццерию</h1>
+<table class="table sizepizzas">
+    <thead class="tableheadfont">
     <tr>
         <td>Имя</td>
         <td>Адрес</td>
         <td>Выбрать пиццерию</td>
     </tr>
     </thead>
-    <tbody>
+    <tbody class="tablesrcfont">
     <c:forEach items="${pizzerias}" var="p">
         <tr>
             <td>${p.name}</td>

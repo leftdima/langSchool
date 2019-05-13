@@ -12,13 +12,26 @@
 <head>
     <title>Заказы</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/menu.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bodypage.css"/>
 </head>
 <body>
+<nav class="top-menu">
+    <ul class="menu-main">
+        <li class="left-item"><a href="<c:url value="/view"/>">Домой</a></li>
+        <li class="left-item"><a href="<c:url value="/myorders"/>">Управление заказами</a></li>
+        <li class="right-item"><a href="<c:url value="/edit"/>">Личный Кабинет</a></li>
+        <li class="right-item"><a href="">О нас</a></li>
+        <li class="right-item"><a href="<c:url value="/exit"/>">Выход</a></li>
+    </ul>
+    <a class="navbar-logo" href=""><img src="${pageContext.request.contextPath}/resources/images/pizzalogo.png"></a>
+</nav>
 <form:form modelAttribute="ordersofclient" method="get">
-    <h3>Средняя сумма заказа: ${stats.avgCost} Общая сумма заказов: ${stats.sumCost} Количество заказов: ${stats.countOfOrders}</h3>
-    <h1 class="text-center">Список заказов</h1>
-    <table>
-        <thead>
+    <h3 class="tableheadfont text-center">Средняя сумма заказа: ${stats.avgCost} Общая сумма заказов: ${stats.sumCost}
+        Количество заказов: ${stats.countOfOrders}</h3>
+    <h1 class="tableheadfont text-center">Список заказов</h1>
+    <table class="table sizepizzas">
+        <thead class="tableheadfont">
         <tr>
             <th>Дата Заказа</th>
             <th>Дата Доставки</th>
@@ -26,7 +39,7 @@
             <th>Обработан</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody class="tablesrcfont">
         <c:forEach items="${ordersofclient}" var="order">
             <tr>
                 <td>${order.orderDate}</td>

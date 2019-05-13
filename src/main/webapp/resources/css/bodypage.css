@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?f1mily=Didact+Gothic|Comfortaa:400,700&subset=latin,cyrillic);
 
-body {
-    /*background: url('../images/backview.jpg') no-repeat;*/
-    background-color: #204d74;
-}
+/*body {*/
+    /*!*background: url('../images/backview.jpg') no-repeat;*!*/
+    /*background-color: #204d74;*/
+/*}*/
 
 .sizepizzas {
     width: 100%;

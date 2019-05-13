@@ -42,6 +42,7 @@ public class UserRepositoryImpl implements UserRepository  {
 
     @Override
     public void saveUser(User user) {
+        System.out.println(user);
         sessionFactory.getCurrentSession().saveOrUpdate(user);
     }
 

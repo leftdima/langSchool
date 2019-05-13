@@ -3,6 +3,7 @@ package com.baranchik.facade;
 import com.baranchik.composits.ClientStats;
 import com.baranchik.composits.PizzaTransform;
 import com.baranchik.composits.Wrapper;
+import com.baranchik.map.CoordinateDetermin;
 import com.baranchik.model.Address;
 import com.baranchik.model.OrderClient;
 import com.baranchik.model.User;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.net.MalformedURLException;
 import java.util.List;
 
 @Component
@@ -32,6 +34,12 @@ public class ClientFacade {
     }
 
     public void updateClient(User user) {
+        user.setRole("client");
+        try {
+            CoordinateDetermin.setCoordinates(user.getAddress());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         userService.saveAddress(user.getAddress());
         userService.saveUser(user);
     }
@@ -97,6 +105,15 @@ public class ClientFacade {
                 orderService.getSummOfPaying(user),
                 orderService.getCountOfOrders(user)
         );
+    }
+
+    public boolean setCoordinates(User user) {
+        try {
+            return CoordinateDetermin.setCoordinates(user.getAddress());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
 }

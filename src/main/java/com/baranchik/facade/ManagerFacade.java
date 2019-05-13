@@ -27,8 +27,8 @@ public class ManagerFacade {
         return orderService.getAllOrders();
     }
 
-    public boolean sendMailAndProcessOrder(Integer id){
-        OrderClient orderClient = orderService.getOrderClient(id);
+    public boolean sendMailAndProcessOrder(OrderClient orderClient){
+        System.out.println(orderClient);
         boolean result = mailUtil.sendMessage(orderClient);
         if (result){
             orderClient.setProcessed((short) 1);

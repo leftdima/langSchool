@@ -13,29 +13,41 @@
     <title>Оформление заказа</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/test.css"/>
-    <style>
-        .headertable {
-            color: #269abc;
-            font-size: 25px;
-        }
-        .bodytable {
-            color: #31b0d5;
-            font-size: 18px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bodypage.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/menu.css"/>
+    <%--<style>--%>
+        <%--.headertable {--%>
+            <%--color: #269abc;--%>
+            <%--font-size: 25px;--%>
+        <%--}--%>
+        <%--.bodytable {--%>
+            <%--color: #31b0d5;--%>
+            <%--font-size: 18px;--%>
+        <%--}--%>
+    <%--</style>--%>
 </head>
 <body>
+<nav class="top-menu">
+    <ul class="menu-main">
+        <li class="left-item"><a href="<c:url value="/view"/>">Домой</a></li>
+        <li class="left-item"><a href="<c:url value="/myorders"/>">Управление заказами</a></li>
+        <li class="right-item"><a href="<c:url value="/edit"/>">Личный Кабинет</a></li>
+        <li class="right-item"><a href="">О нас</a></li>
+        <li class="right-item"><a href="<c:url value="/exit"/>">Выход</a></li>
+    </ul>
+    <a class="navbar-logo" href=""><img src="${pageContext.request.contextPath}/resources/images/pizzalogo.png"></a>
+</nav>
 <c:url var="orderaction" value="/order"/>
 <c:set var="counter" value="0" scope="page"/>
 <h1 class="text-center">Оформите заказ</h1>
 <form:form cssClass="container" action="${orderaction}" method="post" modelAttribute="wrapper">
-    <table class="table-bordered twidth">
-        <thead class="headertable">
+    <table class="table sizepizzas">
+        <thead class="tableheadfont">
         <th class="col-md-6">Название Пиццы</th>
         <th class="col-md-3">Цена за пиццу</th>
         <th class="col-md-3">Количество</th>
         </thead>
-        <tbody class="bodytable">
+        <tbody class="tablesrcfont">
         <c:forEach var="item" items="${wrapper.pizzaTransformList}">
             <tr>
                 <td>

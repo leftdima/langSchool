@@ -8,6 +8,6 @@
 <body>
 
 </body>
-<%--<%response.sendRedirect("/pizza/auth");%>--%>
-<%response.sendRedirect("/pizza/management");%>
+<%response.sendRedirect("/pizza/auth");%>
+<%--<%response.sendRedirect("/pizza/management");%>--%>
 </html>

@@ -13,23 +13,33 @@
     <title>Заказы</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/test.css"/>
-    <style>
-        .headertable {
-            color: #269abc;
-            font-size: 25px;
-        }
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bodypage.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/menu.css"/>
+    <%--<style>--%>
+        <%--.headertable {--%>
+            <%--color: #269abc;--%>
+            <%--font-size: 25px;--%>
+        <%--}--%>
 
-        .bodytable {
-            color: #31b0d5;
-            font-size: 18px;
-        }
-    </style>
+        <%--.bodytable {--%>
+            <%--color: #31b0d5;--%>
+            <%--font-size: 18px;--%>
+        <%--}--%>
+    <%--</style>--%>
 </head>
 <body>
-<h1>Manager</h1>
+<nav class="top-menu">
+    <ul class="menu-main">
+        <li class="left-item"><a href="<c:url value="/management"/>">Домой</a></li>
+        <li class="right-item"><a href="<c:url value="/edit"/>">Личный Кабинет</a></li>
+        <li class="right-item"><a href="<c:url value="/exit"/>">Выход</a></li>
+    </ul>
+    <a class="navbar-logo" href=""><img src="${pageContext.request.contextPath}/resources/images/pizzalogo.png"></a>
+</nav>
+
 <form:form modelAttribute="orders" method="post">
-    <table class="table-bordered twidth">
-        <thead class="headertable">
+    <table class="table sizepizzas">
+        <thead class="tableheadfont">
         <tr>
             <th>Номер</th>
             <th>Заказ</th>
@@ -39,10 +49,9 @@
             <th>Состав</th>
             <th>Статус обработки</th>
             <th>Статус доставки</th>
-            <th>Отмена</th>
         </tr>
         </thead>
-        <tbody class="bodytable">
+        <tbody class="tablesrcfont">
         <c:forEach var="order" items="${orders}">
             <tr>
                 <td>${order.id}</td>

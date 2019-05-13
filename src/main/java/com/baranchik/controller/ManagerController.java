@@ -24,14 +24,20 @@ public class ManagerController {
     @RequestMapping(value = "/process/{id}", method = RequestMethod.GET)
     public String processed(@PathVariable("id") Integer id, Model m) {
         m.addAttribute("orderClient", managerFacade.getOrder(id));
+        System.out.println("managerfacade: " + managerFacade.getOrder(id));
         m.addAttribute("pizzerias", managerFacade.getListPizzeria());
         return "processing";
     }
 
-    @RequestMapping(value = "/processorder/{id}", method = RequestMethod.POST)
-    public String processsing(@ModelAttribute("orderClient") OrderClient orderClient, @PathVariable("id") Integer pizzeriaId, Model m) {
+    @RequestMapping(value = "/processorder/{idpizzeria}", method = RequestMethod.GET)
+    public String processsing(@ModelAttribute("orderClient") OrderClient orderClient,
+                              @PathVariable("idpizzeria") Integer pizzeriaId,
+                              Model m) {
+        System.out.println("before process: " + orderClient);
         orderClient.setPizzeria(managerFacade.getPizzeria(pizzeriaId));
-        managerFacade.sendMailAndProcessOrder(orderClient.getId());
+        System.out.println("Pizzeria " + managerFacade.getPizzeria(pizzeriaId));
+        managerFacade.sendMailAndProcessOrder(orderClient);
+        System.out.println("after process: " + orderClient);
         return "redirect:/management";
     }
 

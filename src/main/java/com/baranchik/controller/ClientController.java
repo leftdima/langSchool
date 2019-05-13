@@ -64,6 +64,12 @@ public class ClientController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String registerUser(@ModelAttribute("newUser") User user) {
         if (clientFacade.getUserByLogin(user.getLogin()) == null) {
+            boolean addCoords = clientFacade.setCoordinates(user);
+            if (addCoords) {
+                System.out.println("Есть координаты");
+            } else {
+                System.out.println("Координат нет");
+            }
             clientFacade.updateClient(user);
             return "auth";
         }
@@ -94,7 +100,9 @@ public class ClientController {
     }
 
     @RequestMapping(value = "/buy", method = RequestMethod.POST)
-    public String buy(@ModelAttribute("wrapper") Wrapper wrapper, @ModelAttribute("user") User user, Model m) {
+    public String buy(@ModelAttribute("wrapper") Wrapper wrapper,
+                      @ModelAttribute("user") User user,
+                      Model m) {
         if (clientFacade.countOfBuyProducts(wrapper) == 0) {
             return "redirect:/view";
         }
@@ -104,7 +112,9 @@ public class ClientController {
     }
 
     @RequestMapping(value = "/order", method = RequestMethod.POST)
-    public String order(@ModelAttribute("wrapper") Wrapper wrapper, @ModelAttribute("orderClient") OrderClient orderClient, Model m) {
+    public String order(@ModelAttribute("wrapper") Wrapper wrapper,
+                        @ModelAttribute("orderClient") OrderClient orderClient,
+                        Model m) {
         clientFacade.fillAndSaveOrder(orderClient,wrapper);
         return "redirect:/view";
     }
